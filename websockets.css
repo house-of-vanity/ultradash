@@ -1,0 +1,18 @@
+input, label, #output {
+    display: none;
+}
+textarea {
+    width: 100%;
+    color:whitesmoke;
+    font-family: Courier New, Courier, monospace;
+    background-color: black;
+
+}
+.time_block {
+    font-family: 'Prosto One', cursive;
+    font-size: 4em;
+}
+.weather_block {
+    font-family: 'Prosto One', cursive;
+    font-size: 3em;
+}

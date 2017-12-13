@@ -1,0 +1,43 @@
+<!DOCTYPE html onload="doConnect()">
+<meta charset="utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="websockets.js"></script>
+<link type="text/css" href="websockets.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Prosto+One" rel="stylesheet">
+<title>WebSocket Test</title>
+<body id="body">
+  <div id="output" >
+    <div><span id="ws_status">Disconnected</span>. Protocol version <span id="ws_version">0</span>. Local version <span id="local_version">0</span></div>
+    <form name="myform">
+      <p>
+        <textarea name="outputtext" rows="8"></textarea>
+      </p>
+      <p>
+        <label><input type="text" name="inputtext"> Request</label>
+      </p>
+      <p>
+        <label><input type="text" name="url" > Server</label>
+      </p>
+      <p>
+        <input type="button" name=sendButton value="Send" onClick="sendText();">
+        <input type="button" name=clearButton value="Clear" onClick="clearText();">
+        <input type="button" name=disconnectButton value="Disconnect" onClick="doDisconnect();">
+        <input type="button" name=connectButton value="Connect" onClick="doConnect();">
+      </p>
+    </form>
+    <hr>
+  </div>
+  <div class="time_block">
+    <span id='time' name='time' class='time'>Time</span><br>
+    <span id='weekday' name='weekday' class='weekday celsium'>Weekday</span>
+  </div>
+  <div class="weather_block">
+    <span id='temp' name='temp' class='temp'>Temp</span> / 
+    <span id='windspeed' name='windspeed' class='windspeed celsium'>Wind speed</span>
+    <img id=w_img>
+  </div>
+  <div class="databoard">
+    <span id='news_title' name='news_title' class='news_title'>News title</span>
+  </div>
+</body>
+</html> 
