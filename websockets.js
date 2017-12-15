@@ -67,9 +67,6 @@
     document.myform.url.value = "ws://localhost:8090/"
     document.myform.inputtext.value = "img"
     document.myform.disconnectButton.disabled = true;
-    //var date = new Date();
-    //document.getElementById('time').innerHTML = str.concat(addZero(date.getHours()),"<blink>:</blink>",addZero(date.getMinutes()));
-    //document.getElementById('weekday').innerHTML = str.concat(dayName(date.getDay()));
     (function () {
     function checkTime(i) {
         return (i < 10) ? "0" + i : i;
@@ -104,17 +101,16 @@
 
   function onOpen(evt)
   {
-    //writeToScreen("CONNECTED TO " + document.myform.url.value + "\n");
-	document.myform.connectButton.disabled = true;
-	document.myform.disconnectButton.disabled = false;
+    document.myform.connectButton.disabled = true;
+    document.myform.disconnectButton.disabled = false;
     document.getElementById('ws_status').innerHTML = "Connected to " + document.myform.url.value;
   }
 
   function onClose(evt)
   {
     writeToScreen("DISCONNECTED FROM " + document.myform.url.value + "\n");
-	document.myform.connectButton.disabled = false;
-	document.myform.disconnectButton.disabled = true;
+    document.myform.connectButton.disabled = false;
+    document.myform.disconnectButton.disabled = true;
     document.getElementById('ws_status').innerHTML = "Disconnected";
     document.getElementById('body').style.backgroundColor = 'red';
     reconnect();
@@ -129,11 +125,9 @@
   function onError(evt)
   {
     writeToScreen('>=< ' + evt.data + '\n');
-
-	websocket.close();
-
-	document.myform.connectButton.disabled = false;
-	document.myform.disconnectButton.disabled = true;
+    websocket.close();
+    document.myform.connectButton.disabled = false;
+    document.myform.disconnectButton.disabled = true;
 
   }
 
@@ -146,23 +140,23 @@
   function writeToScreen(message)
   {
     document.myform.outputtext.value += message
-	document.myform.outputtext.scrollTop = document.myform.outputtext.scrollHeight;
+    document.myform.outputtext.scrollTop = document.myform.outputtext.scrollHeight;
 
   }
 
   window.addEventListener("load", init, false);
 
 
-   function sendText() {
+  function sendText() {
 		doSend( document.myform.inputtext.value );
-   }
+  }
 
   function clearText() {
 		document.myform.outputtext.value = "";
-   }
+  }
 
-   function doDisconnect() {
+  function doDisconnect() {
 		websocket.close();
-   }
+  }
 
 
