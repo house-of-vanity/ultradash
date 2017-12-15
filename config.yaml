@@ -1,0 +1,6 @@
+---
+services:
+  weather: {
+    api_key: 5d23bafcb2379530ac399b0017d2f4ba,
+    city: Moscow,
+  }
