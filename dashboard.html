@@ -2,54 +2,26 @@
 <meta charset="utf-8" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous">
+crossorigin="anonymous">
+<link rel="stylesheet" href="css/dashboard.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/dashboard.js"></script>
+    
 <style>
-    .outer:before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-    }
-
-    .inner {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .outer {
-        text-align: center;
-        height: 100%;
-        width: 100%;
-    }
-    .header-row {
-        height: 50%;
-        background-color: rgba(255,0,0,0.1);
-    }
-    .bottom-row {
-        height: 50%;
-        background-color: rgba(255,0,0,0.1);
-    }
-    body {
-        height: 100%;
-        width: 100%; 
-        position: absolute;
-    }
-    .mono-block {
-        background-color: rgba(0,0,0,0);
-    }
 </style>
 <title>Dashboard</title>
 
-<body id="body">
+<body id="body"  onload="go();">
     <div class='container-fluid header-row'>
         <div class="row h-100 justify-content-between">
             <div class="col-4 align-self-start h-100 mono-block" style="background-color: rgba(255,255,0,0.1);">
                 <div class="outer">
                     <div class="inner" name="mono-1">
-                        Центрированный<br>Элемент
+                        <div id='time'></div>
+                        <div id='weekday'></div>
+                        
                     </div>
                 </div>
             </div>
