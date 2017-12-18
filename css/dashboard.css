@@ -34,7 +34,19 @@ body {
 
 #time, #weekday {
     font-family: Helvetica;
-    font-size: 48px;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: bold;
+}
+#time, #weekday {
+    font-family: Helvetica;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: bold;
+}
+.weather_block  {
+    font-family: Helvetica;
+    font-size: 6em;
     font-style: normal;
     font-weight: bold;
 }

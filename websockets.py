@@ -10,7 +10,7 @@ from threading import Thread
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
 WEATHERAPIKEY = '5d23bafcb2379530ac399b0017d2f4ba'
-WEATHER_CITY = 'Moscow'
+WEATHER_CITY = 'Moscow,ru'
 VERSION = 0.58
 PORT = 8090
 #News rss feed.

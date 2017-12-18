@@ -1,6 +1,7 @@
 function go() {
   startTime();
   blink();
+  doConnect()
 }
 function blink() {
   setInterval(function () {
@@ -55,5 +56,44 @@ function startTime() {
     }
 }
 
+// WebSocket staff.
+function doConnect()
+{
+  websocket = new WebSocket('ws://localhost:8090/');
+  websocket.onopen = function(evt) { onOpen(evt) };
+  websocket.onclose = function(evt) { onClose(evt) };
+  websocket.onmessage = function(evt) { onMessage(evt) };
+  websocket.onerror = function(evt) { onError(evt) };
+}
 
+function onOpen(evt)
+{
+  //document.myform.connectButton.disabled = true;
+  //document.myform.disconnectButton.disabled = false;
+}
+
+function onClose(evt)
+{
+  //document.myform.connectButton.disabled = false;
+  //document.myform.disconnectButton.disabled = true;
+  reconnect();
+}
+
+function onMessage(evt)
+{
+  applyJSON(evt.data);
+}
+
+function applyJSON(json) {
+  console.log(json);
+  obj = JSON.parse(json);
+  document.getElementById('temp').innerHTML = obj.temp + ' °C';
+  document.getElementById('windspeed').innerHTML = obj.wind_speed + ' m/s';
+  document.getElementById('w_img').src = 'http://openweathermap.org/img/w/' + obj.w_img + '.png';
+  //document.getElementById('news_title').innerHTML = obj.news_title;
+  //document.getElementById('ws_version').innerHTML = obj.version;
+  //if (local_version != obj.version) {
+  //    location.reload();
+  //}
+}
 

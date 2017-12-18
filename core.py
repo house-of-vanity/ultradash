@@ -10,6 +10,4 @@ class Core:
     def get_weather(self):
         print(self.config['services']['weather']['api_key'])
 
-
-
 Core(config='config.yaml')

@@ -4,7 +4,7 @@
     console.log(json);
     obj = JSON.parse(json);
     document.getElementById('temp').innerHTML = obj.temp + ' °C';
-    document.getElementById('windspeed').innerHTML = obj.wind_speed + ' mps';
+    document.getElementById('windspeed').innerHTML = obj.wind_speed + ' m/s';
     document.getElementById('news_title').innerHTML = obj.news_title;
     document.getElementById('ws_version').innerHTML = obj.version;
     document.getElementById('w_img').src = 'http://openweathermap.org/img/w/' + obj.w_img + '.png';
